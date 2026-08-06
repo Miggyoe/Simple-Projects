@@ -1,0 +1,461 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite sides */
+    align-items: center;            /* Centers items vertically */
+    padding: 20px 40px;             /* Adds breathing room on the sides */
+    background-color: transparent;  /* Keeps your background image visible */
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(rgba(45, 146, 112, 0.75), rgba(43, 118, 93, 0.75)), 
+                      url('imgs/plane_bg.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 100px 20px; 
+}
+
+.btn-login {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle glow on hover */
+}
+
+/* ==========================================
+   SHARED AUTH WRAPPER & CONTAINER 
+   (Used on Login & Register Pages)
+   ========================================== */
+.login-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(45, 146, 112, 0.75), rgba(43, 118, 93, 0.75)), 
+                      url('icons/bg-travel-plane.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Styles headings for both pages (h2 for login, h1 for register) */
+.form-box h2,
+.form-box h1 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #2b765d; 
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Shared styling for all text inputs across both forms */
+.form-group input, select,
+.form-box form > input[type="text"],
+.form-box form > input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px; /* Breaks inputs down to clean rows */
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-box form > input:focus {
+    border-color: #2d9270;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   LOGIN FORM SPECIFIC STYLES
+   ========================================== */
+.btn-submit-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d9270; 
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit-login:hover {
+    background-color: #2b765d; 
+}
+
+.divider {
+    margin: 25px 0;
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 0.1em;
+}
+
+.divider span {
+    background: #ffffff;
+    padding: 0 10px;
+    color: #888888;
+    font-size: 0.85rem;
+}
+
+.btn-signup-redirect {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    text-align: center;
+    background-color: transparent;
+    color: #2d9270;
+    border: 2px solid #2d9270;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.btn-signup-redirect:hover {
+    background-color: rgba(45, 146, 112, 0.1); 
+    border-color: #2b765d;
+    color: #2b765d;
+}
+
+/* ==========================================
+   REGISTER FORM SPECIFIC STYLES
+   ========================================== */
+.btn-box {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-box .btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Register page Submit Button */
+.btn-box button.btn {
+    background-color: #2d9270;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-box button.btn:hover {
+    background-color: #2b765d;
+}
+
+/* Register page Cancel Link Button */
+.btn-box a.btn {
+    background-color: transparent;
+    color: #666666;
+    border: 2px solid #cccccc;
+}
+
+.btn-box a.btn:hover {
+    background-color: #f5f5f5;
+    color: #333333;
+    border-color: #999999;
+}
+
+.error-message{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px; /* Breaks inputs down to clean rows */
+    border: 1px solid #ff9595;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    color: red;
+    background: #ffd9d9;
+    text-align: center;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#travlog{
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 8px;
+}
+
+.header-index{
+    display: flex;
+    align-items: center;
+    background: white;
+    justify-content: space-between;
+    padding-right: 80px;
+    padding-left: 18px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-btn:hover{
+    text-decoration: none;
+    color: #074222;
+    border-radius: 0px;
+    transition: all 0.2s;
+}
+
+.header-index h1{
+    color: #2b765d;
+}
+
+.header-index a{
+    text-decoration: none;
+    color: black;
+    margin-left: 55px;
+}
+
+.body-1{
+    background: #2b765d;
+    color: white;
+    padding: 30px;
+    padding-bottom: 50px;
+    background-image: url(icons/bg-travel.png);
+    background-blend-mode: multiply;
+    background-position: left center;
+}
+
+.body-1 h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+.body-1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.body-1-packages{
+    color: white;
+    padding: 100px 40px; 
+    flex: 1;
+    border: 1px solid black;
+}
+.body-1-packages h1{
+    text-align: right;
+    margin-top: -100px;
+}
+.body-1-packages p{
+    text-align: right;
+}
+
+.body-1 a{
+    text-decoration: none;
+    color: black;
+    background: white;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all 0.2s;
+}
+
+.body-1 a:hover {
+    background: #333333;
+    color: white;
+    border-color: #333333;
+}
+
+.body-2{
+    flex: 1;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.body-2-packages{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popular-destination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1px;
+    font-size: x-large;
+    margin-top: 25px;
+    margin-bottom: -25px;
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-1, .card-2, .card-3{
+    background: #2b765d;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+.card-1{
+    margin-right: 25px;
+    
+}
+.card-2{
+    margin-right: 25px;
+    margin-left: 25px;
+}
+.card-3{
+    margin-left: 25px;
+}
+
+.cards a{
+    text-decoration: none;
+    color: white;
+}
+
+.cards img{
+    width: 360px;
+    height: 150px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.cards p{
+    font-size: small;
+    text-align: left;
+    color: black;
+}
+
+.cards p, 
+.cards h5{
+    color: white;
+    padding: 10px;
+}
+
+.cards h5{
+    margin-bottom: -20px;
+    font-size: 20px;
+}
+
+.card-body{
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+#profile-btn{
+    color: red;
+}
+#profile-btn:hover{
+    color: black;
+    transition: 0.2s;
+}
+
+#price{
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 35px;
+    padding-right: 35px;
+    background: #2b765d;
+    color: black;
+    padding: 25px;
+}
+footer img{
+    width: 60px;
+    height: 55px;
+}
+.footer-1, .footer-2, .footer-3, .footer-4{
+    display: flex;
+}
+.footer-text{
+    padding-left: 15px;
+}
+.cards a div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards a:hover div {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cards a img {
+    transition: filter 0.3s ease;
+}
+
+.cards a:hover img {
+    filter: brightness(1.05);
+}
