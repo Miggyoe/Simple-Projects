@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Personal Survey Form</h1>
+    <p id="description">Thank you for taking the time to complete this survey. Your feedback is valuable and helps us improve our services.</p>
+    <form action="#" method="post" id="survey-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name" id="name-label">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Last name, First name">
+            <br>
+
+            <label for="email" id="email-label">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+            <br>
+
+            <label for="number" id="number-label">Contact Number</label>
+            <input type="number" id="number" name="number" required min="11" max="20" placeholder="09876543211">
+            <br>
+
+            <label for="dropdown">Gender</label>
+            <select name="gender" id="dropdown">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            
+            <label>Relationship Status</label>
+            <input type="radio" name="relationship" value="relationship" >Single
+            <input type="radio" name="relationship" value="relationship">Married
+            <br>
+
+            <label>What areas are you interested?</label>
+            <br>
+            <input type="checkbox" id="web" name="interest" value="Web Development">Web development
+            <br>
+            <input type="checkbox" id="software" name="interest" value="Software Development">Software Development
+            <br>
+            <input type="checkbox" id="game" name="interest" value="Game Development">Game Development
+            <br>
+            <br>
+
+            <label for="comments">Comments</label>
+            <br>
+            <textarea name="comments" id="comments" placeholder="Write your comments or feedbacks" rows="4" cols="30"></textarea>
+            <br>
+
+            <button type="submit" id="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
